@@ -1,5 +1,5 @@
 # Django blog
-The goal in making this application was to make a backend for mock blog app using Django. A user can create, edit, and delete blogs under different categories.
+The goal in making this application was to use Django and PostgreSQL to make a backend for a mock blog app. A user can create, edit, and delete blogs under different categories from the minimal frontend or by making API calls to the backend.
 
 ## Installation
 ```
@@ -14,8 +14,7 @@ $ python manage.py runserver
 Open http://localhost:8000
 
 ## Additional notes
-This application is using a postgresql database: `django_blog`.
-The database can be changed in `settings.py`
+This application is using a PostgreSQL database: `django_blog`, that can be changed in `blog_proj/settings.py`
 ```python
 DATABASES = {
     'default': {
@@ -24,7 +23,10 @@ DATABASES = {
     }
 }
 ```
-And for good practice, uses `python-dotenv` for handling Django's secret key. If you run into any errors, within the Django-blog directory, create a `.env` file and insert your django key:
+
+## Environment Variables
+And for good practice, uses `python-dotenv` for handling Django's secret key. If you run into any errors, create a `.env` file and insert your django key. `django-blog/.env`
+
 ```
 DJANGO_SECRET=<secret_key_here>
 ```
