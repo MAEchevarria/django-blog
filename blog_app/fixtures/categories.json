@@ -1,0 +1,44 @@
+[
+    {
+        "model": "blog_app.category",
+        "pk": 1,
+        "fields": {
+            "name": "Personal"
+        }
+    },
+    {
+        "model": "blog_app.category",
+        "pk": 2,
+        "fields": {
+            "name": "Food"
+        }
+    },
+    {
+        "model": "blog_app.category",
+        "pk": 3,
+        "fields": {
+            "name": "Health"
+        }
+    },
+    {
+        "model": "blog_app.category",
+        "pk": 4,
+        "fields": {
+            "name": "Travel"
+        }
+    },
+    {
+        "model": "blog_app.category",
+        "pk": 5,
+        "fields": {
+            "name": "Gaming"
+        }
+    },
+    {
+        "model": "blog_app.category",
+        "pk": 6,
+        "fields": {
+            "name": "DIY"
+        }
+    }
+]
