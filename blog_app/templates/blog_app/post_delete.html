@@ -1,0 +1,19 @@
+{% extends "blog_app/layout.html" %}
+
+{% block content %}
+
+<h1>Post delete page</h1>
+<p>Are you sure you want to delete {{ post.name }}</p>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="submit" value="Yes, Delete.">
+</form>
+
+<br>
+
+<div>
+    <a href="{% url 'get_post' category.id post.id %}">go back</a>
+</div>
+
+{% endblock %}

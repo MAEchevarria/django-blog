@@ -1,0 +1,25 @@
+{% extends "blog_app/layout.html" %}
+{% load static %}
+
+{% block content %}
+<div>
+    <h1>{{ category.name }}</h1>
+    <a href="{% url 'create_post' category.id %}">Create a post</a>
+</div>
+<br>
+
+    {% for post in posts %}
+        <div>
+            <a href="{% url 'get_post' post.category_id post.id %}">{{ post.title }}</a>
+        </div>
+    {% endfor %}
+
+    <br>
+    <div>
+        <a href="{% url 'update_category' category.id %}">Edit {{ category.name }} Category</a>
+        <br>
+        <a href="{% url 'delete_category' category.id %}">Delete {{ category.name }} Category</a>
+    </div>
+
+
+{% endblock %}

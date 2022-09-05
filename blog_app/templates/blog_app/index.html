@@ -1,4 +1,17 @@
 {% extends "blog_app/layout.html" %}
+{% load static %}
 
 {% block content %}
+<div>
+    <h1>Categories</h1>
+    <a href="{% url 'create_category' %}"> Add category </a>
+</div>
+<br>
+
+    {% for category in categories %}
+        <div>
+            <a href="{% url 'get_category' category.id %}">{{ category.name }}</a>
+        </div>
+    {% endfor %}
+
 {% endblock %}

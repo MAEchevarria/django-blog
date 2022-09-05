@@ -1,0 +1,12 @@
+{% extends "blog_app/layout.html" %}
+
+{% block content %}
+
+<h1>Post edit page</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{form}}
+    </form>
+
+{% endblock %}
