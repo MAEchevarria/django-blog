@@ -24,12 +24,97 @@ DATABASES = {
 }
 ```
 
+I have included fixture data that can be loaded by running:
+```
+$ python manage.py loaddata categories.json
+$ python manage.py loaddata posts.json
+```
+
 ## Environment Variables
 And for good practice, uses `python-dotenv` for handling Django's secret key. If you run into any errors, create a `.env` file and insert your django key. `django-blog/.env`
 
 ```
 DJANGO_SECRET=<secret_key_here>
 ```
+
+
+## API Reference
+<details><summary>Categories</summary>
+
+**Get all categories**
+```http
+  GET /categories
+```
+
+**Get category by id**
+```http
+  GET /categories/<id>
+```
+
+**Create new category**
+```http
+  POST /categories
+```
+Request body
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `name` | `string` | **Required**. Category name |
+
+**Update category**
+```http
+  PUT /categories/<id>
+```
+Request body:
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `name` | `string` | **Required**. Category name |
+
+**Delete category**
+```http
+  DELETE /categories/<id>
+```
+</details>
+
+<details><summary>Posts</summary>
+
+**Get all posts**
+```http
+  GET /posts
+```
+
+**Get post by id**
+```http
+  GET /posts/<id>
+```
+
+**Create new post**
+```http
+  POST /posts
+```
+Request body
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `category` | `number` | **Required**. Category id |
+| `title` | `string` | **Required**. Post title |
+| `description` | `string` | **Required**. Post text |
+
+**Update post**
+```http
+  PUT /posts/<id>
+```
+Request body
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `category` | `number` | **Required**. Category id |
+| `title` | `string` | **Required**. Post title |
+| `description` | `string` | **Required**. Post text |
+
+**Delete post**
+```http
+  DELETE /posts/<id>
+```
+</details>
+<br>
 
 ## Technologies used:
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
