@@ -1,6 +1,6 @@
 [
     {
-        "model": "blog.post",
+        "model": "blog_app.post",
         "pk": 1,
         "fields": {
             "category": 1,
@@ -36,7 +36,7 @@
         }
     },
     {
-        "model": "blog.post",
+        "model": "blog_app.post",
         "pk": 5,
         "fields": {
             "category": 3,
@@ -70,9 +70,9 @@
             "title": "Lorem ipsum dolor sit amet",
             "description": "Accusamus eius sed illum reiciendis, error officiis odit nobis quas."
         }
-    }
+    },
     {
-        "model": "blog.post",
+        "model": "blog_app.post",
         "pk": 9,
         "fields": {
             "category": 5,
@@ -108,7 +108,7 @@
         }
     },
     {
-        "model": "blog.post",
+        "model": "blog_app.post",
         "pk": 13,
         "fields": {
             "category": 1,
@@ -142,9 +142,9 @@
             "title": "Lorem ipsum dolor sit amet",
             "description": "Accusamus eius sed illum reiciendis, error officiis odit nobis quas."
         }
-    }
+    },
     {
-        "model": "blog.post",
+        "model": "blog_app.post",
         "pk": 17,
         "fields": {
             "category": 5,
@@ -180,7 +180,7 @@
         }
     },
     {
-        "model": "blog.post",
+        "model": "blog_app.post",
         "pk": 21,
         "fields": {
             "category": 3,
