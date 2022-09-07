@@ -43,17 +43,17 @@ DJANGO_SECRET=<secret_key_here>
 
 **Get all categories**
 ```http
-  GET /categories
+GET /categories
 ```
 
 **Get category by id**
 ```http
-  GET /categories/<id>
+GET /categories/<id>
 ```
 
 **Create new category**
 ```http
-  POST /categories
+POST /categories
 ```
 Request body
 | Parameter | Type     | Description                |
@@ -62,7 +62,7 @@ Request body
 
 **Update category**
 ```http
-  PUT /categories/<id>
+PUT /categories/<id>
 ```
 Request body:
 | Parameter | Type     | Description                |
@@ -71,7 +71,7 @@ Request body:
 
 **Delete category**
 ```http
-  DELETE /categories/<id>
+DELETE /categories/<id>
 ```
 </details>
 
@@ -79,17 +79,17 @@ Request body:
 
 **Get all posts**
 ```http
-  GET /posts
+GET /posts
 ```
 
 **Get post by id**
 ```http
-  GET /posts/<id>
+GET /posts/<id>
 ```
 
 **Create new post**
 ```http
-  POST /posts
+POST /posts
 ```
 Request body
 | Parameter | Type     | Description                |
@@ -100,7 +100,7 @@ Request body
 
 **Update post**
 ```http
-  PUT /posts/<id>
+PUT /posts/<id>
 ```
 Request body
 | Parameter | Type     | Description                |
@@ -111,10 +111,9 @@ Request body
 
 **Delete post**
 ```http
-  DELETE /posts/<id>
+DELETE /posts/<id>
 ```
 </details>
-<br>
 
 ## Technologies used:
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
