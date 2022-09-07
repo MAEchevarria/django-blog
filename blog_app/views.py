@@ -9,11 +9,11 @@ import json
 
 def index(request):
     categories = Category.objects.all()
-    return render(request, "craigslist_app/index.html", {"categories": categories})
+    return render(request, "blog_app/index.html", {"categories": categories})
 
 def get_categories(request):
     categories = Category.objects.all()
-    return render(request, "craigslist_app/index.html", {"categories": categories})
+    return render(request, "blog_app/index.html", {"categories": categories})
     
 def create_category(request):
     if request.method == 'POST':
@@ -23,7 +23,7 @@ def create_category(request):
             return redirect('index')
     else:
         form = CategoryForm()
-    return render(request, 'craigslist_app/category_new.html', {"form": form})
+    return render(request, 'blog_app/category_new.html', {"form": form})
 
 def get_category(request, id):
     try:
@@ -32,7 +32,7 @@ def get_category(request, id):
         data = {"posts": posts, "category": category}
     except:
         raise Http404("Hello, World! This category does not exist.")
-    return render(request, "craigslist_app/category.html", data) 
+    return render(request, "blog_app/category.html", data) 
 
 def update_category(request, id):
     category = Category.objects.get(pk=id)
@@ -43,7 +43,7 @@ def update_category(request, id):
             return redirect('index')
     else:
         form = CategoryForm(instance=category)
-    return render(request, "craigslist_app/category_edit.html", {'form': form})
+    return render(request, "blog_app/category_edit.html", {'form': form})
 
 def delete_category(request, id):
     try:
@@ -53,7 +53,7 @@ def delete_category(request, id):
             category.delete()
             return redirect('index')        
         
-        return render(request, "craigslist_app/category_delete.html", {'category': category})
+        return render(request, "blog_app/category_delete.html", {'category': category})
 
     except:
         return HttpResponse({"Category deletion:", False})
@@ -69,7 +69,7 @@ def create_post(request, id):
             return redirect('index')
     else:
         form = PostForm()
-    return render(request, 'craigslist_app/post_new.html', {"form": form})
+    return render(request, 'blog_app/post_new.html', {"form": form})
 
 def get_post(request, id, post_id):
     try:
@@ -80,7 +80,7 @@ def get_post(request, id, post_id):
     except:
         raise Http404("Hello, World! This post does not exist.")
 
-    return render(request, "craigslist_app/post.html", data) 
+    return render(request, "blog_app/post.html", data) 
 
 def update_post(request, id, post_id):
     post = Post.objects.get(category=id, pk=post_id)
@@ -93,7 +93,7 @@ def update_post(request, id, post_id):
 
     else:
         form = PostForm(instance=post)
-    return render(request, "craigslist_app/post_edit.html", {'form': form})
+    return render(request, "blog_app/post_edit.html", {'form': form})
 
 def delete_post(request, id, post_id):
     try:
@@ -104,7 +104,7 @@ def delete_post(request, id, post_id):
         if request.method == 'POST':
             post.delete()
             return redirect('index')
-        return render(request, "craigslist_app/post_delete.html", data)
+        return render(request, "blog_app/post_delete.html", data)
 
     except Exception as e:
         return HttpResponse(f"Post deletion failed: {e}")
